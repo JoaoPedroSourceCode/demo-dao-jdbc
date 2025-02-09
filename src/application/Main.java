@@ -27,5 +27,13 @@ public class Main {
         for (Seller obj : find) {
             System.out.println(obj);
         }
+
+        System.out.println("\n------------------TEST - FindByAll------------------");
+
+        find = sellerDao.findAll();
+
+        for (Seller obj : find) {
+            System.out.println(obj);
+        }
     }
 }
