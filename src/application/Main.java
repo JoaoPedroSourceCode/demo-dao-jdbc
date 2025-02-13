@@ -41,8 +41,10 @@ public class Main {
 
         System.out.println("\n------------------TEST - Insert ------------------");
 
+
+
         try {
-            Seller alex = new Seller(2000.0, sdf.parse("20/01/2000"), "alexcoeuss@gmail.com", "Alexcoeus", null, department);
+            Seller alex = new Seller(2000.0, sdf.parse("20/01/2020"), "alexander@gmail.com", "Alexander", null, department);
             sellerDao.insert(alex);
         }
 
@@ -51,14 +53,5 @@ public class Main {
         }
 
         System.out.println("Success");
-
-        System.out.println("\n------------------TEST - Update ------------------");
-
-        seller = sellerDao.findById(1);
-        seller.setName("David");
-        sellerDao.update(seller);
-
-        System.out.println("Done");
-
     }
 }
