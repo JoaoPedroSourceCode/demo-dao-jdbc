@@ -60,5 +60,8 @@ public class Main {
 
         System.out.println("Done");
 
+        System.out.println("\n------------------TEST - DeleteById ------------------");
+
+        sellerDao.deleteById(13);
     }
 }
