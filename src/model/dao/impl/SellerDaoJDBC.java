@@ -61,7 +61,6 @@ public class SellerDaoJDBC implements SellerDao {
         } finally {
             DB.closeStatement(st);
         }
-
     }
 
     @Override
@@ -71,8 +70,8 @@ public class SellerDaoJDBC implements SellerDao {
         try {
             st = conn.prepareStatement(
                     "UPDATE seller "
-                    + "SET Name = ?, Email = ?, BirthDate = ?, BaseSalary = ?, DepartmentId = ? "
-                    +  "WHERE Id = ? ");
+                            + "SET Name = ?, Email = ?, BirthDate = ?, BaseSalary = ?, DepartmentId = ? "
+                            + "WHERE Id = ? ");
 
             st.setString(1, seller.getName());
             st.setString(2, seller.getEmail());
@@ -105,13 +104,9 @@ public class SellerDaoJDBC implements SellerDao {
             if (rowsAffected == 0) {
                 throw new DbException("no deletion executed");
             }
-        }
-
-        catch (SQLException se) {
+        } catch (SQLException se) {
             throw new DbException(se.getMessage());
-        }
-
-        finally {
+        } finally {
             DB.closeStatement(st);
         }
     }
@@ -235,7 +230,6 @@ public class SellerDaoJDBC implements SellerDao {
             List<Seller> findByDepartment = new ArrayList<>();
 
             Map<Integer, Department> departmentMap = new HashMap<>();
-
 
             while (rs.next()) {
 

@@ -1,5 +1,6 @@
 package application;
 
+import db.DB;
 import model.dao.SellerDao;
 import model.dao.impl.DaoFactory;
 import model.entities.Department;
@@ -62,6 +63,8 @@ public class Main {
 
         System.out.println("\n------------------TEST - DeleteById ------------------");
 
-        sellerDao.deleteById(13);
+        sellerDao.deleteById(54);
+
+        DB.closeConnection();
     }
 }
